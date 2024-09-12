@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shree_computers</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body>
+    <div class="profile">
+
+
+        <a href="https://wa.link/pykkos" class="whatsapp-icon" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <!-- Logo and name -->
+        <div class="logo-name">
+            <div class="logo">
+                <img src="./logo.jpeg" alt="Swami Logo">
+            </div>
+            <h2 class="styled-heading"><span>Shree Computers</span></h2>
+
+            <!-- <p> <span>साताराची खाद्य संस्कृती </span> <br>
+                <span> मिठाई संस्कृती मध्ये मानाचा तुरा असलेले </span> <br>
+                <span> जांभळे बंधू मिठाईवाले. </span>
+            </p> -->
+        </div><br>
+
+        <!-- brands -->
+        <section id="brand-carousel">
+            <h2><i class="fas fa-laptop"></i>  Brands We Offer</h2>
+            <div class="carousel-container">
+                <div class="carousel">
+                    <div class="brand-item"><img src="./brands-logo/hp-logo.png" alt="HP"></div>
+                    <div class="brand-item"><img src="./brands-logo/dell-logo.png" alt="DELL"></div>
+                    <div class="brand-item"><img src="./brands-logo/lenevo.png" alt="LENOVO"></div>
+                    <div class="brand-item"><img src="./brands-logo/acer.png" alt="ACER"></div>
+                    <div class="brand-item"><img src="./brands-logo/logitech.jpg" alt="LOGITECH"></div>
+                    <div class="brand-item"><img src="./brands-logo/epson.png" alt="Epson"></div>
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+
+    <!-- about -->
+
+    <section id="about-us">
+        <div class="container">
+          <h2><i class="fas fa-cogs"></i> Our Services</h2>
+          <div class="about-cards">
+            <div class="about-card">
+              <h3><i class="fas fa-tools"></i> Tech Solutions</h3>
+              <p>We offer a wide range of services and products to meet all your tech needs, from laptops to accessories.</p>
+            </div>
+            <div class="about-card">
+              <h3><i class="fas fa-laptop"></i> New & Refurbished Laptops</h3>
+              <p>Explore our selection of brand-new and refurbished laptops, perfect for every budget.</p>
+            </div>
+            <div class="about-card">
+              <h3><i class="fas fa-desktop"></i> Assembled & Branded PCs</h3>
+              <p>Choose from assembled and branded desktop PCs tailored for personal and professional use.</p>
+            </div>
+            <div class="about-card">
+              <h3><i class="fas fa-print"></i> Printers & Accessories</h3>
+              <p>We provide top-notch printers and all types of accessories from renowned brands.</p>
+            </div>
+            <div class="about-card">
+              <h3><i class="fas fa-wrench"></i> Sales, Service & Repairs</h3>
+              <p>Our expert services ensure your devices run smoothly with sales, servicing, and repairs.</p>
+            </div>
+            <div class="about-card">
+              <h3><i class="fas fa-recycle"></i> Toner Refilling</h3>
+              <p>Keep printing costs low with our specialized toner refilling services.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
+
+
+
+    <!-- why choose us -->
+    <section id="why-choose-us">
+        <div class="container">
+            <h2><i class="fas fa-star"></i> Why Choose Us</h2>
+            <p>
+                At Shree Computers, we offer:
+            </p>
+            <ul>
+                <li><strong>- Affordable Prices</strong> : Get high-quality products and services that fit your budget.
+                </li>
+                <li><strong>- Expert Staff</strong> : Our experienced professionals provide reliable support and
+                    solutions.</li>
+                <li><strong>- Trusted Brands</strong> : We work with the most reputable brands, ensuring performance and
+                    quality.</li>
+            </ul>
+        </div>
+    </section><br><br>
+
+
+    
+    <!-- slider  -->
+
+
+    <div class="slider">
+        <div class="slider-images">
+            <img src="./slider/1.jpg" alt="Sweets 1">
+            <img src="./slider/pc.jpg" alt="Sweets 1">
+            <img src="./slider/printer.jpg" alt="Sweets 3">
+            <img src="./slider/repair.jpg" alt="Sweets 4">
+            <img src="./slider/toner.jpg" alt="Sweets 6">
+        </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+    </div><br><br>
+
+
+    <!-- contact -->
+    <section id="contact-us">
+        <div class="container">
+          <h2><i class="fas fa-envelope"></i> Contact Us</h2>
+          <p class="info">If you have any questions or need assistance, feel free to reach out to us. We'd love to help!</p>
+      
+          <div class="contact-info">
+            <p> <strong>Address:</strong> 123 Main Street, Your City</p>
+            <p><strong>Phone:</strong> +123 456 7890</p>
+            <p> <strong>Email:</strong> info@shreecomputers.com</p>
+          </div>
+        </div>
+      </section>
+      <br><br>
+
+
+
+
+
+
+    <script>
+        const images = document.querySelectorAll('.slider-images img');
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+        let currentIndex = 0;
+        let autoSlideInterval;
+
+        // Function to show the image at the current index
+        function showImage(index) {
+            const offset = -index * 100; // Move by percentage of container width
+            document.querySelector('.slider-images').style.transform = `translateX(${offset}%)`;
+        }
+
+        // Next button click event
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+            resetAutoSlide(); // Reset the interval on manual navigation
+        });
+
+        // Previous button click event
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex);
+            resetAutoSlide(); // Reset the interval on manual navigation
+        });
+
+        // Automatically change images every 3 seconds
+        function autoSlide() {
+            autoSlideInterval = setInterval(() => {
+                currentIndex = (currentIndex + 1) % images.length;
+                showImage(currentIndex);
+            }, 3000); // 3000ms = 3 seconds
+        }
+
+        // Reset the auto-slide when the user interacts with the carousel
+        function resetAutoSlide() {
+            clearInterval(autoSlideInterval);
+            autoSlide(); // Restart the interval
+        }
+
+        // Start the automatic slideshow on page load
+        autoSlide();
+    </script>
+
+
+</body>
+
+</html>
